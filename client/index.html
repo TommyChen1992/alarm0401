@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Clock with Alarms</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Login Modal -->
+    <div id="login-overlay" class="overlay">
+        <div class="dialog">
+            <h2>Welcome</h2>
+            <p>Enter your email to sync your alarms</p>
+            <div class="form-group">
+                <input type="email" id="login-email" placeholder="email@example.com" class="input-text">
+                <button id="login-btn" class="btn-primary">Login</button>
+            </div>
+            <p id="login-error" class="error-text hidden"></p>
+        </div>
+    </div>
+
+    <div id="clock-container" class="hidden">
+        <nav class="user-nav">
+            <span id="user-display"></span>
+            <button id="logout-btn" class="btn-link">Logout</button>
+        </nav>
+
+        <div class="main-display">
+            <time id="clock"></time>
+            <div id="date-display" class="date-text"></div>
+        </div>
+
+        <section id="alarm-section" class="alarm-section">
+            <button id="toggle-alarm-btn" class="btn-secondary">Alarms</button>
+            <div id="alarm-panel" class="alarm-panel hidden">
+                <div class="alarm-form">
+                    <input type="time" id="alarm-time" class="input-time">
+                    <input type="text" id="alarm-label" placeholder="Label" class="input-text">
+                    <button id="add-alarm-btn" class="btn-primary">Add</button>
+                </div>
+                <ul id="alarm-list" class="alarm-list"></ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- Alarm Trigger Overlay -->
+    <div id="alarm-overlay" class="overlay hidden">
+        <div class="dialog alarm-triggered">
+            <h2 id="triggered-alarm-label">Alarm!</h2>
+            <p id="triggered-alarm-time"></p>
+            <button id="dismiss-alarm-btn" class="btn-primary">Dismiss</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
